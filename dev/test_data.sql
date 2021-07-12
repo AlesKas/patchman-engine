@@ -95,7 +95,8 @@ INSERT INTO package_name(id,name) VALUES
 (107, 'sed'),
 (108, 'grep'),
 (109, 'which'),
-(110, 'passwd');
+(110, 'passwd'),
+(111, 'gcc');
 
 INSERT INTO strings(id, value) VALUES
 ('1', 'The Linux kernel'), -- kernel summary
@@ -117,7 +118,9 @@ INSERT INTO strings(id, value) VALUES
 ('9', 'Displays where a particular program in your path is located'), -- which summary
 ('99', 'The which command shows the full pathname of a specific program...'), -- which description
 ('10', 'An utility for setting or changing passwords using PAM'), -- passwd summary
-('1010', 'This package contains a system utility (passwd) which sets...'); -- passwd description
+('1010', 'This package contains a system utility (passwd) which sets...'), -- passwd description
+('111', 'GNU Compiler Collection'), -- gcc summary
+('111111', 'GCC is an optimizing compiler produced by the GNU Project supporting various programming languages ...'); -- gcc description
 
 INSERT INTO package(id, name_id, evra, description_hash, summary_hash, advisory_id) VALUES
 (1, 101, '5.6.13-200.fc31.x86_64', '11', '1', 1), -- kernel
@@ -127,10 +130,12 @@ INSERT INTO package(id, name_id, evra, description_hash, summary_hash, advisory_
 (5, 105, '1.30-4.el8.x86_64', '55', '5', 5), -- tar
 (6, 106, '239-13.el8_0.5.x86_64', '66', '6', 6), -- systemd
 (7, 107, '4.5-1.el8.x86_64', '77', '7', 7), -- sed
-(8, 108, '3.1-6.el8.x86_64', '88', '8', 8), -- grep
-(9, 109, '2.21-10.el8.x86_64', '99', '9', 9), -- which
-(10, 110, '0.80-2.el8.x86_64', '1010', '10', 9), -- passwd
-(11, 101, '5.6.13-201.fc31.x86_64', '11', '1', 7); -- kernel
+(8, 111, '10.3.1-1.fc32.x86_64', '111111', '111', null), -- gcc
+(9, 108, '3.1-6.el8.x86_64', '88', '8', 8), -- grep
+(10, 109, '2.21-10.el8.x86_64', '99', '9', 9), -- which
+(11, 110, '0.80-2.el8.x86_64', '1010', '10', 9), -- passwd
+(12, 101, '5.6.13-201.fc31.x86_64', '11', '1', 7); -- kernel
+
 
 INSERT INTO system_package (rh_account_id, system_id, package_id, name_id, update_data) VALUES
 (3, 12, 1, 101, '[{"evra": "5.10.13-200.fc31.x86_64", "advisory": "RH-100"}]'),
